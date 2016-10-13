@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'Awesome';
+    src: url('fonts/fontawesome.woff') format('woff');
+}
+@font-face {
+    font-family: 'MuseoSans';
+    src: url('fonts/MuseoSans-500.woff') format('woff');
+}
+@font-face {
+    font-family: 'MuseoSansRounded';
+    src: url('fonts/MuseoSansRounded300.woff') format('woff');
+}
+/*functions */
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+/* Variables */
+$line-height-top: 85px;
+$colors_c00: #565650;
+$colors_c01: #f1f2f5;
+$colors_c02: #53c0d6;
+$colors_c03: #565d72;
+
+$museo500: 'MuseoSans';
+$opensans: 'Open Sans';
+
+body * {
+	font-family: $museo500;
+}
+body {
+}
+
+
+header {
+	line-height: $line-height-top;
+
+	nav {
+	}
+
+	ul.menu {
+		text-align: right;
+
+		li {
+			height: $line-height-top;
+			display: inline-flex;
+			align-items: center;
+
+			a {
+				text-transform: uppercase;
+				color: $colors_c00;
+				font-size: calculateRem(15px);
+				line-height: normal;
+			}
+		}
+
+	}
+}
+.top-highlight {
+	background: $colors_c01;
+
+	> .row {
+		display: flex;
+		align-items: center;
+	}
+	> .row > div {
+	}
+	.type_event {
+		padding: calculateRem(35px) 0;
+
+		p {
+			margin-bottom: 0;
+		}
+		.title, .date {
+			font-size: calculateRem(18px);
+		}
+		.title {
+			color: $colors_c02;
+		}
+		.date {
+			color: $colors_c00;
+		}
+		.info {
+			color: $colors_c03;
+			font-family: $opensans;
+			font-size: calculateRem(15px);
+		}
+	}
+}
+a.button.line {
+	color: #00b9bc;
+	border: 1px solid #00b9bc;
+	background: none;
+	transition: easy-in-out all 0.25s;
+	margin-bottom: 0;
+}
+a.button.line:hover,
+a.button.line.filled {
+	color: #fff;
+	border: 1px solid #00b9bc;
+	background: $colors_c02;
+}
+a.button.line.filled:hover {
+	background: #4497a9;
+}

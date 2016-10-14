@@ -57,6 +57,7 @@ header {
 
 	}
 }
+
 .top-highlight {
 	background: $colors_c01;
 
@@ -81,13 +82,84 @@ header {
 		.date {
 			color: $colors_c00;
 		}
-		.info {
-			color: $colors_c03;
-			font-family: $opensans;
-			font-size: calculateRem(15px);
+	}
+}
+
+.content-body {
+
+	.info {
+		color: $colors_c03;
+		font-size: calculateRem(16px);
+		font-family: $opensans;
+	}
+}
+
+.body-invitation {
+	padding: calculateRem(36px) 0;
+
+	h2 {
+		color: $colors_c00;
+		font-size: calculateRem(28px);
+		text-align: center;
+		text-transform: uppercase;
+	}
+	.group {
+		text-align: center;
+
+		.logo {
+			padding: calculateRem(40px) 0;
+			min-height: 205px;
+		}
+		.title {
+			color: $colors_c00;
+			font-size: calculateRem(18px);
+			text-transform: uppercase;
+			margin-bottom: 1rem;
 		}
 	}
 }
+
+.body-mission {
+	padding: calculateRem(36px) 0;
+	background: $colors_c01;
+
+	h2 {
+		color: $colors_c00;
+		font-size: calculateRem(28px);
+		text-align: center;
+		text-transform: uppercase;
+	}
+	.title_info {
+		color: $colors_c03;
+		font-size: calculateRem(15px);
+		font-family: $opensans;
+		text-align: center;
+
+		span {
+			display: block;
+			font-size: calculateRem(18px);
+			margin: 1.5rem 0 2rem;
+		}
+	}
+	.goal {
+		text-align: center;
+
+		.icon {
+			margin-bottom: -54px;
+		}
+		.goal_content {
+			padding: 64px 1rem 20px;
+			background: #fff;
+			border-radius: 5px;
+		}
+		.title {
+			color: $colors_c02;
+			font-size: calculateRem(18px);
+			margin-bottom: 1rem;
+		}
+	}
+}
+
 a.button.line {
 	color: #00b9bc;
 	border: 1px solid #00b9bc;

@@ -1,3 +1,11 @@
+/*
+*
+* PSD to HTML5 + CSS3 + jQuery
+* By Ignacio Salcedo - ignacio@isalcedo.com / http://isalcedo.com - https://orucode.com
+* Oct 2016.
+* for CompuCorp - Task 3.
+*
+*/
 @font-face {
     font-family: 'Awesome';
     src: url('fonts/fontawesome.woff') format('woff');
@@ -24,6 +32,7 @@ $colors_c02: #53c0d6;
 $colors_c03: #565d72;
 
 $museo500: 'MuseoSans';
+$museo300: 'MuseoSansRounded';
 $opensans: 'Open Sans';
 
 body * {
@@ -55,6 +64,41 @@ header {
 			}
 		}
 
+	}
+}
+
+.cont-slider .slide {
+	position: relative;
+
+	.info {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		left: 0;
+		right: 0;
+		display: flex;
+		align-items: center;
+		height: 100%;
+
+		h2 {
+			color: #fff;
+			font-size: calculateRem(59px);
+			font-family: $museo300;
+			text-align: center;
+		}
+		p {
+			color: #fff;
+			font-size: calculateRem(18px);
+			font-family: $opensans;
+			text-align: center;
+			padding: 0 3.1rem;
+
+			span {
+				display: block;
+				font-size: calculateRem(15px);
+				margin: 1.5rem 0;
+			}
+		}
 	}
 }
 
@@ -120,7 +164,7 @@ header {
 }
 
 .body-mission {
-	padding: calculateRem(36px) 0;
+	padding: calculateRem(36px) 0 calculateRem(50px);
 	background: $colors_c01;
 
 	h2 {
@@ -160,6 +204,106 @@ header {
 	}
 }
 
+.members-slider {
+	padding: 0 0 calculateRem(35px);
+	background: $colors_c01;
+
+	h2 {
+		color: $colors_c00;
+		font-size: calculateRem(28px);
+		text-align: center;
+		text-transform: uppercase;
+	}
+}
+
+.footer-blog {
+	padding: calculateRem(34px) 0 calculateRem(34px);
+
+	h2 {
+		color: $colors_c00;
+		font-size: calculateRem(28px);
+		text-align: center;
+		text-transform: uppercase;
+	}
+	.post {
+		padding: 0 2rem 0 0;
+	}
+	.post .title {
+		text-align: left;
+		padding: calculateRem(10px) 0;
+		border-bottom: 2px solid #f4f5f7;
+		line-height: 1rem;
+		margin: 0;
+
+		a {
+			color: $colors_c02;
+			font-size: calculateRem(15px);
+			font-family: $opensans;
+			font-weight: 600;
+		}
+	}
+	.info {
+		padding: calculateRem(22px) 0;
+		border-bottom: 2px solid #f4f5f7;
+
+		p:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+	}
+	.info p,
+	p.date {
+		color: $colors_c03;
+		font-size: calculateRem(15px);
+		font-family: $opensans;
+		margin: 0;
+	}
+	p.date {
+		padding: calculateRem(20px) 0 0;
+	}
+	.cont-blog-slider {
+		margin-right: -2rem;
+	}
+}
+
+footer {
+	background: #454850;
+
+	.social {
+		display: flex;
+		height: 84px;
+		align-items: center;
+		justify-content: center;
+		border-bottom: 2px solid #535760;
+
+		a:not(:last-child) {
+			margin-right: calculateRem(20px);
+		}
+	}
+	.legal {
+		padding: calculateRem(24px) 0;
+		text-align: center;
+
+		p {
+			color: #979eb1;
+			font-size: calculateRem(15px);
+			font-family: $opensans;
+			margin: 0;
+		}
+		a {
+			color: $colors_c02;
+		}
+		a:hover {
+			color: #00b9bc;
+		}
+	}
+}
+
+
+hr {
+  border-bottom: 2px solid #e3e4e7;
+  margin-top: 0;
+  margin-bottom: calculateRem(50px);
+}
 a.button.line {
 	color: #00b9bc;
 	border: 1px solid #00b9bc;
@@ -175,4 +319,72 @@ a.button.line.filled {
 }
 a.button.line.filled:hover {
 	background: #4497a9;
+}
+
+.slick-dots {
+	margin: 0;
+	text-align: center;
+}
+.slick-dots li {
+	list-style: none;
+	display: inline-block;
+}
+.slick-dots li:not(:last-child) {
+	margin-right: calculateRem(10px);
+}
+.slick-dots button {
+	color: transparent;
+	background: url(../img/SliderDots.png) top right no-repeat;
+	height: 11px;
+	width: 12px;
+	transition: easy-in-out all 0.25s;
+}
+.slick-dots button:hover,
+.slick-dots .slick-active button{
+	background: url(../img/SliderDots.png) top left no-repeat;
+}
+.slick-prev,
+.slick-next
+{
+	font-size: 0;
+	line-height: 0;
+
+	position: absolute;
+	top: 50%;
+
+	display: block;
+
+	width: 17px;
+	height: 29px;
+	padding: 0;
+	-webkit-transform: translate(0, -50%);
+	-ms-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+
+	cursor: pointer;
+
+	color: transparent;
+	border: none;
+	outline: none;
+	background: transparent;
+}
+.slick-prev
+{
+   left: -35px;
+   background: url(../img/SliderPrev.png) top left no-repeat;
+	transition: easy-in-out all 0.25s;
+}
+.slick-prev:hover
+{
+   background: url(../img/SliderPrev.png) top right no-repeat;
+}
+.slick-next
+{
+   right: -5px;
+   background: url(../img/SliderNext.png) top right no-repeat;
+	transition: easy-in-out all 0.25s;
+}
+.slick-next:hover
+{
+   background: url(../img/SliderNext.png) top left no-repeat;
 }

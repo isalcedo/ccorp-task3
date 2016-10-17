@@ -43,12 +43,14 @@ $(document).ready( function(){
 			breakpoint: 480,
 			settings: {
 				slidesToShow: 2,
+				arrows: false,
 			}
 		},
 		{
 			breakpoint: 768,
 			settings: {
 				slidesToShow: 3,
+				arrows: false,
 			}
 		},
 		]

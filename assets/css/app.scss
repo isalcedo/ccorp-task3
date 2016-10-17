@@ -221,6 +221,7 @@ header {
 
 .footer-blog {
 	padding: calculateRem(34px) 0 calculateRem(34px);
+	overflow: hidden;
 
 	h2 {
 		color: $colors_c00;

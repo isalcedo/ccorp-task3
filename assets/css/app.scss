@@ -23,6 +23,10 @@
   $remSize: $size / 16px;
   @return #{$remSize}rem;
 }
+@function calculateEm($size) {
+  $emSize: $size / 16px;
+  @return #{$emSize}em;
+}
 
 /* Variables */
 $line-height-top: 85px;
@@ -40,7 +44,6 @@ body * {
 }
 body {
 }
-
 
 header {
 	line-height: $line-height-top;
@@ -387,4 +390,84 @@ a.button.line.filled:hover {
 .slick-next:hover
 {
    background: url(../img/SliderNext.png) top left no-repeat;
+}
+
+@media screen and (max-width: calculateEm(640px)) {
+	header {
+		text-align: center;
+		ul.menu {
+
+			text-align: center;
+
+			li:first-child {
+				width: 100%;
+
+				a {
+					width: inherit;
+				}
+			}
+		}
+	}
+	.cont-slider .slide {
+
+		.info {
+			position: relative;
+			background: $colors_c01;
+			border-bottom: 2px solid #fff;
+
+			h2 {
+				color: $colors_c02;
+				font-size: calculateRem(30px);
+				font-family: $museo300;
+				text-align: center;
+				padding-top: calculateRem(12px);
+			}
+			p {
+				color: $colors_c03;
+				font-size: calculateRem(15px);
+				font-family: $opensans;
+				text-align: center;
+				padding: 0 3.1rem;
+
+				span {
+					display: block;
+					font-size: calculateRem(13px);
+					margin: 1.5rem 0;
+				}
+			}
+		}
+	}
+	.goal {
+		margin-bottom: 1rem;
+	}
+	.slick-slide img {
+		margin: auto;
+	}
+}
+@media screen and (min-width: calculateEm(768px)) {
+	header {
+		text-align: center;
+		ul.menu {
+
+			text-align: center;
+		}
+	}
+	.cont-slider .slide {
+
+		.info {
+
+			h2 {
+				font-size: calculateRem(40px);
+				font-family: $museo300;
+			}
+			p {
+				color: #fff;
+				font-size: calculateRem(15px);
+
+				span {
+					font-size: calculateRem(13px);
+				}
+			}
+		}
+	}
 }

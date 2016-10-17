@@ -17,6 +17,20 @@ $(document).ready( function(){
 		autoplaySpeed: 2000,
 		arrows: false,
 		dots: true,
+		responsive: [
+		{
+			breakpoint: 480,
+			settings: {
+				slidesToShow: 2,
+			}
+		},
+		{
+			breakpoint: 768,
+			settings: {
+				slidesToShow: 3,
+			}
+		},
+		]
 	});
 
 	$('.cont-blog-slider').slick({
@@ -24,6 +38,20 @@ $(document).ready( function(){
 		slidesToScroll: 1,
 		autoplay: true,
 		autoplaySpeed: 2000,
+		responsive: [
+		{
+			breakpoint: 480,
+			settings: {
+				slidesToShow: 2,
+			}
+		},
+		{
+			breakpoint: 768,
+			settings: {
+				slidesToShow: 3,
+			}
+		},
+		]
 	});
 
 });
